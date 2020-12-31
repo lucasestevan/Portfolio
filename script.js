@@ -8,4 +8,11 @@ $(document).ready(function() {
             $('.navbar').removeClass("sticky2");
         }
     })
+
+    // script do navbar menu
+
+    $('.menu-btn').click(function() {
+        $('.navbar .menu').toggleClass("active");
+        $('.menu-btn i').toggleClass("active");
+    });
 });

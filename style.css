@@ -2,6 +2,7 @@
     @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
     @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&family=Roboto+Condensed:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
     /*stilo do nabvar*/
     
     * {
@@ -9,13 +10,14 @@
         padding: 0;
         box-sizing: border-box;
         text-decoration: none;
+        font-family: "Poppins", "Roboto Condensed", "Baloo 2", sans-serif;
     }
     
     .navbar {
         position: fixed;
-        /* color: #00B4DB; */
-        padding: 10px 0;
+        padding: 20px 0;
         width: 100%;
+        z-index: 9;
     }
     
     .navbar.sticky {
@@ -43,7 +45,6 @@
     
     .navbar .logo a {
         color: #fff;
-        font-family: "Roboto Condensed", "Baloo 2", sans-serif;
         font-size: 2.3rem;
         font-weight: 600;
     }
@@ -59,15 +60,22 @@
     
     .navbar .menu li a {
         color: #fff;
-        font-family: "Roboto Condensed", "Baloo 2", sans-serif;
-        font-size: 1rem;
-        font-weight: 300;
+        font-size: .9rem;
+        font-weight: 400;
         margin-left: 25px;
         transition: color 0.3s ease;
     }
     
     .navbar .menu li a:hover {
         color: #00B4DB;
+    }
+    /* botao menu stilo */
+    
+    .navbar .menu-btn {
+        color: #fff;
+        font-size: 26px;
+        cursor: pointer;
+        display: none;
     }
     /*stilo da home*/
     
@@ -76,11 +84,6 @@
         height: 100vh;
         color: #ffffff;
         min-height: 500px;
-    }
-    
-    ;
-    bory {
-        font-size: 16px;
     }
     
     .img-wrapper {
@@ -96,42 +99,99 @@
         object-fit: cover;
     }
     
-    .home .banner {
-        margin: auro 0 auto 40px;
+    .banner {
+        margin: auto 0 auto 40px;
+        position: absolute;
+        margin-top: 20%;
+        margin-left: 7%;
     }
     
-    .home .banner h1 {
+    .home .banner .text-1 {
         color: #ffffff;
-        font-size: 3.5rem;
-        font-family: "Baloo 2", "Roboto Condensed", sans-serif;
-        font-weight: 300;
-        text-shadow: .3rem .3rem 2px rgba(0, 0, 0, 0.6);
+        font-size: 2.5rem;
+        font-weight: 200;
         line-height: 3.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: .5rem;
     }
     
-    .banner p {
+    .home .banner .text-2 {
+        color: #ffffff;
+        font-size: 4.5rem;
+        font-weight: 600;
+        line-height: 3.5rem;
+        margin-bottom: .5rem;
+    }
+    
+    .home .banner .text-3 {
         color: #ffffff;
         font-size: 2rem;
-        font-family: "Baloo 2", "Roboto Condensed", sans-serif;
         font-weight: 200;
         line-height: 3.5rem;
         margin-bottom: 2rem;
     }
     
+    .home .banner .text-3 span {
+        color: #00B4DB;
+    }
+    
     .banner button {
-        font-family: "Roboto Condensed", "Baloo 2";
-        color: #000;
-        background-color: #00B4DB;
-        background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
-        background: linear-gradient(to right, #0083B0, #00B4DB);
+        background: none;
+        color: #fff;
         padding: 1rem 3rem;
-        border: none;
         border-radius: 10px;
+        border-color: #00B4DB;
         cursor: pointer;
     }
     
     .banner button:hover {
-        color: #fff;
-        opacity: 0.8;
+        background-color: #00B4DB;
+        background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+        background: linear-gradient(to right, #0083B0, #00B4DB);
+        opacity: 0.9;
+        transition: color 0.3s ease;
+    }
+    /* CONFIGURANDO A QUERY PARA RESPONSIVIDADE */
+    
+    @media (max-width:931px) {
+        .navbar .max-width {
+            padding: 0 50px;
+        }
+        .navbar .menu-btn {
+            display: block;
+            z-index: 999;
+        }
+        .navbar .menu-btn i.active::before {
+            content: "\f00d";
+        }
+        .navbar .menu {
+            position: fixed;
+            height: 100vh;
+            width: 100%;
+            left: -100%;
+            top: 0;
+            background: #111;
+            padding-top: 1rem;
+            text-align: center;
+        }
+        .navbar .menu.active {
+            left: 0%;
+            transition: all 2s ease;
+        }
+        .navbar .menu li {
+            display: block;
+        }
+        .navbar .menu li a {
+            display: inline-block;
+            margin: 1.8rem;
+            font-size: 1.8rem;
+        }
+        .home .banner .text-1 {
+            font-size: 1.5rem;
+        }
+        .home .banner .text-2 {
+            font-size: 3.5rem;
+        }
+        .home .banner .text-3 {
+            font-size: 1rem;
+        }
     }
