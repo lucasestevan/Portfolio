@@ -2,4 +2,4 @@
 
 Disponível em https://lucasestevan.github.io/Portfolio/
 
-Portfolio com html, css e js
+Portfólio com Html, Css e JS
