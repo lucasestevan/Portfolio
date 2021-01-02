@@ -16,14 +16,14 @@
 
 .navbar {
     position: fixed;
-    padding: 20px 0;
+    padding: 10px 0;
     width: 100%;
     z-index: 9;
 }
 
 .navbar.sticky {
     background: #00B4DB;
-    padding: 10px 0 0 10px;
+    padding: 5px 0;
     transition: 0.8s;
 }
 
@@ -189,6 +189,8 @@ section {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    padding-right: 2rem;
+    padding-left: 2rem;
 }
 
 .sobreMim .container .column-left {
@@ -212,7 +214,6 @@ section {
 .sobreMim .container .column-right p {
     text-align: justify;
     margin-bottom: 10px;
-    padding-right: 30px;
 }
 
 .sobreMim .container .column-right button {
@@ -238,28 +239,26 @@ section {
     object-fit: cover;
     border-radius: 6px;
     overflow: hidden;
-    margin-left: 14%;
+    margin: 1rem;
 }
 
 
 /* CONFIGURANDO A QUERY PARA RESPONSIVIDADE */
 
-@media (max-width:450px) {
-    .home .banner {
-        margin-top: 50%;
-    }
-    .home .banner .text-1 {
-        font-size: 1.5rem;
-    }
-    .home .banner .text-2 {
-        font-size: 3.5rem;
-    }
-    .home .banner .text-3 {
-        font-size: 1rem;
+@media (max-width:1300px) {
+    .home .max-width {
+        margin-left: 0px;
     }
 }
 
-@media (max-width:931px) {
+@media (max-width:1104px) {
+    .sobreMim .container .column-left img {
+        height: 450px;
+        width: 450px;
+    }
+}
+
+@media (max-width:988px) {
     .navbar .max-width {
         padding: 0 5% 0 5%;
         margin-right: 10%;
@@ -292,5 +291,49 @@ section {
         display: inline-block;
         margin: 1.8rem;
         font-size: 1.8rem;
+    }
+    .home .banner {
+        margin-top: 30%;
+    }
+    .home .banner .text-1 {
+        font-size: 1.8rem;
+    }
+    .home .banner .text-2 {
+        font-size: 3.8rem;
+    }
+    .home .banner .text-3 {
+        font-size: 1.8rem;
+    }
+    .max-width {
+        max-width: 800px;
+    }
+    .sobreMim .container .column-left .column-right {
+        width: 50%;
+    }
+    .sobreMim .container .column-left {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .sobreMim .container .column-right {
+        flex: 100%;
+    }
+}
+
+@media (max-width:450px) {
+    .home .banner {
+        margin-top: 50%;
+    }
+    .home .banner .text-1 {
+        font-size: 1.5rem;
+    }
+    .home .banner .text-2 {
+        font-size: 3.5rem;
+    }
+    .home .banner .text-3 {
+        font-size: 1rem;
+    }
+    .sobreMim .container .column-left .column-right {
+        width: 50%;
     }
 }
