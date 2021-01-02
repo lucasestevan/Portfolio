@@ -1,197 +1,296 @@
-    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
-    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
-    @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&family=Roboto+Condensed:wght@300&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
-    /*stilo do nabvar*/
-    
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        text-decoration: none;
-        font-family: "Poppins", "Roboto Condensed", "Baloo 2", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+
+/*stilo do nabvar*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Poppins", "Roboto Condensed", "Baloo 2", sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    padding: 20px 0;
+    width: 100%;
+    z-index: 9;
+}
+
+.navbar.sticky {
+    background: #00B4DB;
+    padding: 10px 0 0 10px;
+    transition: 0.8s;
+}
+
+.navbar.sticky2 .logo a span {
+    color: #000;
+    transition: 0.8s;
+}
+
+.max-width {
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+.navbar .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    color: #fff;
+    font-size: 2.3rem;
+    font-weight: 600;
+}
+
+.navbar .logo a span {
+    color: #00B4DB;
+}
+
+.navbar .menu li {
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar .menu li a {
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 400;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+    color: #00B4DB;
+}
+
+
+/* botao menu stilo */
+
+.navbar .menu-btn {
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+    display: none;
+}
+
+
+/*stilo da home*/
+
+.home {
+    display: flex;
+    height: 100vh;
+    color: #ffffff;
+    min-height: 500px;
+}
+
+.img-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner {
+    margin: auto 0 auto 40px;
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 7%;
+}
+
+.home .banner .text-1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 200;
+    line-height: 3.5rem;
+    margin-bottom: .5rem;
+}
+
+.home .banner .text-2 {
+    color: #ffffff;
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 3.5rem;
+    margin-bottom: .5rem;
+}
+
+.home .banner .text-3 {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 200;
+    line-height: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+.home .banner .text-3 span {
+    color: #00B4DB;
+}
+
+.banner button {
+    background: none;
+    color: #fff;
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    border-color: #00B4DB;
+    cursor: pointer;
+}
+
+.banner button:hover {
+    background-color: #00B4DB;
+    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+    opacity: 0.9;
+    transition: color 0.3s ease;
+}
+
+
+/* STILO DA SECAO SOBRE MIM */
+
+section {
+    padding: 2rem 0;
+}
+
+.sobreMim .tittle {
+    position: relative;
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 3rem;
+    font-weight: 500;
+}
+
+.sobreMim .tittle::before {
+    content: "";
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #00B4DB;
+    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+    transform: translateX(-50%);
+}
+
+.sobreMim .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sobreMim .container .column-left {
+    width: 45%;
+}
+
+.sobreMim .container .column-right {
+    width: 55%;
+}
+
+.sobreMim .container .column-right .text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.sobreMim .container .column-right .text span {
+    color: #00B4DB;
+}
+
+.sobreMim .container .column-right p {
+    text-align: justify;
+    margin-bottom: 10px;
+    padding-right: 30px;
+}
+
+.sobreMim .container .column-right button {
+    background-color: #00B4DB;
+    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    border-color: #00B4DB;
+    cursor: pointer;
+}
+
+.sobreMim .container .column-right button:hover {
+    background: none;
+    color: #111;
+    opacity: 0.9;
+    transition: color .9s ease;
+}
+
+.sobreMim .container .column-left img {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-left: 14%;
+}
+
+
+/* CONFIGURANDO A QUERY PARA RESPONSIVIDADE */
+
+@media (max-width:450px) {
+    .home .banner {
+        margin-top: 50%;
     }
-    
-    .navbar {
-        position: fixed;
-        padding: 20px 0;
-        width: 100%;
-        z-index: 9;
-    }
-    
-    .navbar.sticky {
-        background: #00B4DB;
-        padding: 10px 0;
-        transition: 0.8s;
-    }
-    
-    .navbar.sticky2 .logo a span {
-        color: #000;
-        transition: 0.8s;
-    }
-    
-    .max-width {
-        max-width: 1300px;
-        padding: 0 80px;
-        margin: auto;
-    }
-    
-    .navbar .max-width {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    
-    .navbar .logo a {
-        color: #fff;
-        font-size: 2.3rem;
-        font-weight: 600;
-    }
-    
-    .navbar .logo a span {
-        color: #00B4DB;
-    }
-    
-    .navbar .menu li {
-        list-style: none;
-        display: inline-block;
-    }
-    
-    .navbar .menu li a {
-        color: #fff;
-        font-size: .9rem;
-        font-weight: 400;
-        margin-left: 25px;
-        transition: color 0.3s ease;
-    }
-    
-    .navbar .menu li a:hover {
-        color: #00B4DB;
-    }
-    /* botao menu stilo */
-    
-    .navbar .menu-btn {
-        color: #fff;
-        font-size: 26px;
-        cursor: pointer;
-        display: none;
-    }
-    /*stilo da home*/
-    
-    .home {
-        display: flex;
-        height: 100vh;
-        color: #ffffff;
-        min-height: 500px;
-    }
-    
-    .img-wrapper {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-    
-    .img-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .banner {
-        margin: auto 0 auto 40px;
-        position: absolute;
-        margin-top: 20%;
-        margin-left: 7%;
-    }
-    
     .home .banner .text-1 {
-        color: #ffffff;
-        font-size: 2.5rem;
-        font-weight: 200;
-        line-height: 3.5rem;
-        margin-bottom: .5rem;
+        font-size: 1.5rem;
     }
-    
     .home .banner .text-2 {
-        color: #ffffff;
-        font-size: 4.5rem;
-        font-weight: 600;
-        line-height: 3.5rem;
-        margin-bottom: .5rem;
+        font-size: 3.5rem;
     }
-    
     .home .banner .text-3 {
-        color: #ffffff;
-        font-size: 2rem;
-        font-weight: 200;
-        line-height: 3.5rem;
-        margin-bottom: 2rem;
+        font-size: 1rem;
     }
-    
-    .home .banner .text-3 span {
-        color: #00B4DB;
+}
+
+@media (max-width:931px) {
+    .navbar .max-width {
+        padding: 0 5% 0 5%;
+        margin-right: 10%;
     }
-    
-    .banner button {
-        background: none;
-        color: #fff;
-        padding: 1rem 3rem;
-        border-radius: 10px;
-        border-color: #00B4DB;
-        cursor: pointer;
+    .navbar .menu-btn {
+        display: block;
+        z-index: 999;
     }
-    
-    .banner button:hover {
-        background-color: #00B4DB;
-        background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
-        background: linear-gradient(to right, #0083B0, #00B4DB);
-        opacity: 0.9;
-        transition: color 0.3s ease;
+    .navbar .menu-btn i.active::before {
+        content: "\f00d";
     }
-    /* CONFIGURANDO A QUERY PARA RESPONSIVIDADE */
-    
-    @media (max-width:931px) {
-        .navbar .max-width {
-            padding: 0 50px;
-        }
-        .navbar .menu-btn {
-            display: block;
-            z-index: 999;
-        }
-        .navbar .menu-btn i.active::before {
-            content: "\f00d";
-        }
-        .navbar .menu {
-            position: fixed;
-            height: 100vh;
-            width: 100%;
-            left: -100%;
-            top: 0;
-            background: #111;
-            padding-top: 1rem;
-            text-align: center;
-        }
-        .navbar .menu.active {
-            left: 0%;
-            transition: all 2s ease;
-        }
-        .navbar .menu li {
-            display: block;
-        }
-        .navbar .menu li a {
-            display: inline-block;
-            margin: 1.8rem;
-            font-size: 1.8rem;
-        }
-        .home .banner .text-1 {
-            font-size: 1.5rem;
-        }
-        .home .banner .text-2 {
-            font-size: 3.5rem;
-        }
-        .home .banner .text-3 {
-            font-size: 1rem;
-        }
+    .navbar .menu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        right: -100%;
+        top: 0;
+        background: #111;
+        padding-top: 2rem;
+        text-align: center;
     }
+    .navbar .menu.active {
+        right: 0%;
+        transition: all 2s ease;
+    }
+    .navbar .menu li {
+        display: block;
+    }
+    .navbar .menu li a {
+        display: inline-block;
+        margin: 1.8rem;
+        font-size: 1.8rem;
+    }
+}
