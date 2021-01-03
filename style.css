@@ -322,6 +322,105 @@ section {
 }
 
 
+/* STILO DA SKILLS */
+
+.skills .tittle {
+    position: relative;
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 3rem;
+    font-weight: 500;
+}
+
+.skills .tittle::before {
+    content: "";
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    width: 380px;
+    height: 3px;
+    background: #00B4DB;
+    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+    transform: translateX(-50%);
+}
+
+.skills .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4rem;
+}
+
+.skills .container .column {
+    width: calc(50% - 30px);
+}
+
+.skills .container .left .text {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.skills .container .left p {
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.skills .container .right .bars {
+    margin-bottom: 15px;
+}
+
+.skills .container .right .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.skills .container .right .linha {
+    height: 5px;
+    width: 100%;
+    background: lightgrey;
+    position: relative;
+}
+
+.skills .container .right .linha::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #00B4DB;
+    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+}
+
+.skills .container .right .html::before {
+    width: 70%;
+}
+
+.skills .container .right .CSS::before {
+    width: 50%;
+}
+
+.skills .container .right .JavaScript::before {
+    width: 20%;
+}
+
+.skills .container .right .C::before {
+    width: 40%;
+}
+
+.skills .container .right .SQL::before {
+    width: 15%;
+}
+
+.skills .container .right .git::before {
+    width: 50%;
+}
+
+
 /* CONFIGURANDO A QUERY PARA RESPONSIVIDADE */
 
 @media (max-width:1300px) {
@@ -359,7 +458,6 @@ section {
 @media (max-width:988px) {
     .navbar .max-width {
         padding: 0 5% 0 5%;
-        margin-right: 10%;
     }
     .navbar .menu-btn {
         display: block;
@@ -405,17 +503,24 @@ section {
     .max-width {
         max-width: 800px;
     }
-    .sobreMim .tittle {
+    .sobreMim .tittle,
+    .skills .tittle {
         font-size: 1.5rem;
     }
-    .sobreMim .container .column-right .text {
+    .sobreMim .container .column-right .text,
+    .skills .container .left .text {
         font-size: 1.3rem;
     }
-    .sobreMim .container .column-right p {
+    .sobreMim .container .column-right p,
+    .skills .container .column-left p {
         font-size: 1rem;
     }
     .projetos .container .card {
         width: 100%
+    }
+    .skills .container .column {
+        width: 100%;
+        margin-bottom: 20px;
     }
 }
 
