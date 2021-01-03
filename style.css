@@ -14,6 +14,10 @@
     font-family: "Poppins", "Roboto Condensed", "Baloo 2", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .navbar {
     position: fixed;
     padding: 10px 0;
@@ -60,6 +64,7 @@
 }
 
 .navbar .menu li a {
+    display: block;
     color: #fff;
     font-size: .9rem;
     font-weight: 400;
@@ -288,7 +293,7 @@ section {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    margin: 4rem;
+    margin: 2rem;
 }
 
 .projetos .container .card {
@@ -350,7 +355,7 @@ section {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    margin: 4rem;
+    margin: 2rem;
 }
 
 .skills .container .column {
@@ -421,6 +426,176 @@ section {
 }
 
 
+/* STILO DO CONTATO */
+
+.contato {
+    background: #111;
+    color: #fff;
+}
+
+.contato .tittle {
+    position: relative;
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 3rem;
+    font-weight: 500;
+}
+
+.contato .tittle::before {
+    content: "";
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    width: 250px;
+    height: 3px;
+    background: #00B4DB;
+    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+    transform: translateX(-50%);
+}
+
+.contato .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem;
+}
+
+.contato .container .column {
+    width: calc(50% - 30px);
+}
+
+.contato .container .left .text {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.contato .container .left p {
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.contato .container .left .icons {
+    margin: 10px 0;
+}
+
+.contato .container .left .row {
+    display: flex;
+    height: 60px;
+    align-items: center;
+}
+
+.contato .container .row .info {
+    margin-left: 20px;
+}
+
+.contato .container .row i {
+    font-size: 25px;
+    color: #00B4DB;
+}
+
+.contato .container .info .head {
+    font-weight: 500;
+}
+
+.contato .container .info .sub-title {
+    font-weight: 200;
+}
+
+.contato .container .right .text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.contato .right form .campos {
+    display: flex;
+}
+
+.contato .right form .campo,
+.contato .right form .campos .campo {
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.contato .right form .nome {
+    margin-right: 10px;
+}
+
+.contato .right form .email {
+    margin-left: 10px;
+}
+
+.contato .right form .corpo {
+    height: 150px;
+    width: 100%;
+}
+
+.contato .right form .campo input,
+.contato .right form .corpo textarea {
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: .9rem;
+}
+
+.contato .right form .corpo textarea {
+    padding-top: 10px;
+    resize: none;
+}
+
+.contato .right form .button {
+    height: 47px;
+    width: 170px;
+}
+
+.contato .right form .button button {
+    height: 100%;
+    width: 100%;
+    background-color: #00B4DB;
+    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+    border-radius: 10px;
+    border-color: #00B4DB;
+    cursor: pointer;
+}
+
+.contato .right form .button button:hover {
+    background: none;
+    color: #fff;
+    opacity: 0.9;
+    transition: color .3s ease;
+}
+
+
+/* STILO DO RODAPE */
+
+footer {
+    font-size: .7rem;
+    background: #111;
+    padding: 20px 23px;
+    color: #fff;
+    text-align: center;
+}
+
+footer span a {
+    color: #00B4DB;
+    text-decoration: none;
+}
+
+footer span a:hover {
+    text-decoration: underline;
+}
+
+
 /* CONFIGURANDO A QUERY PARA RESPONSIVIDADE */
 
 @media (max-width:1300px) {
@@ -431,7 +606,9 @@ section {
 
 @media (max-width:1120px) {
     .sobreMim .tittle,
-    .projetos .tittle {
+    .projetos .tittle,
+    .skills .tittle,
+    .contato .tittle {
         font-size: 1.8rem;
     }
     .sobreMim .container .column-left img {
@@ -504,11 +681,14 @@ section {
         max-width: 800px;
     }
     .sobreMim .tittle,
-    .skills .tittle {
+    .skills .tittle,
+    .projetos .tittle,
+    .contato .tittle {
         font-size: 1.5rem;
     }
     .sobreMim .container .column-right .text,
-    .skills .container .left .text {
+    .skills .container .left .text,
+    .projetos .container .text {
         font-size: 1.3rem;
     }
     .sobreMim .container .column-right p,
@@ -518,7 +698,8 @@ section {
     .projetos .container .card {
         width: 100%
     }
-    .skills .container .column {
+    .skills .container .column,
+    .contato .container .column {
         width: 100%;
         margin-bottom: 20px;
     }
