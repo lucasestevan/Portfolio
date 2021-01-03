@@ -27,7 +27,7 @@
     transition: 0.8s;
 }
 
-.navbar.sticky2 .logo a span {
+.navbar.sticky .logo a span {
     color: #000;
     transition: 0.8s;
 }
@@ -69,6 +69,10 @@
 
 .navbar .menu li a:hover {
     color: #00B4DB;
+}
+
+.navbar.sticky .menu li a:hover {
+    color: #111;
 }
 
 
@@ -157,11 +161,14 @@
 }
 
 
-/* STILO DA SECAO SOBRE MIM */
+/* STILO DE TODAS AS SECTIOS */
 
 section {
-    padding: 2rem 0;
+    padding: 5rem 0;
 }
+
+
+/* STILO DA SECAO SOBRE MIM */
 
 .sobreMim .tittle {
     position: relative;
@@ -201,7 +208,7 @@ section {
 }
 
 .sobreMim .container .column-right .text {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 15px;
 }
@@ -211,7 +218,7 @@ section {
 }
 
 .sobreMim .container .column-right p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-align: justify;
     margin-bottom: 20px;
 }
@@ -244,7 +251,74 @@ section {
     height: 450px;
     width: 450px;
     object-fit: cover;
+    border-radius: 20px;
+}
+
+
+/* STILO DA SECAO PROJETOS */
+
+.projetos {
+    background: #111;
+    color: #fff;
+}
+
+.projetos .tittle {
+    position: relative;
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 3rem;
+    font-weight: 500;
+}
+
+.projetos .tittle::before {
+    content: "";
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #00B4DB;
+    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+    transform: translateX(-50%);
+}
+
+.projetos .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4rem;
+}
+
+.projetos .container .card {
+    width: calc(25% - 20px);
+    background-color: #222;
+    text-align: center;
+    padding: 20px 25px;
     border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+
+.projetos .container .card:hover {
+    background: #00B4DB;
+    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+}
+
+.projetos .container .card .box {
+    transition: all 0.3 ease;
+}
+
+.projetos .container .card:hover .box {
+    transform: scale(1.05);
+}
+
+.projetos .container .card .text {
+    font-size: 1.5rem;
+    font-weight: 500px;
+    margin: 10px 0 7px 0;
 }
 
 
@@ -257,7 +331,8 @@ section {
 }
 
 @media (max-width:1120px) {
-    .sobreMim .tittle {
+    .sobreMim .tittle,
+    .projetos .tittle {
         font-size: 1.8rem;
     }
     .sobreMim .container .column-left img {
@@ -274,6 +349,10 @@ section {
     }
     .sobreMim .container .column-right {
         flex: 100%;
+    }
+    .projetos .container .card {
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
     }
 }
 
@@ -334,6 +413,9 @@ section {
     }
     .sobreMim .container .column-right p {
         font-size: 1rem;
+    }
+    .projetos .container .card {
+        width: 100%
     }
 }
 
